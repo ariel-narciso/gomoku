@@ -1,6 +1,10 @@
 import xmlrpc.client as client
+from sys import argv
 
-server = client.ServerProxy('http://localhost:8000')
+ipAddress = argv[1]
+port = argv[2]
+
+server = client.ServerProxy('http://{}:{}'.format(ipAddress, port))
 
 id: int
 grid: list[list[str]]

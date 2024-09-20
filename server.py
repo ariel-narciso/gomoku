@@ -10,7 +10,7 @@ class RequestHandler(SimpleXMLRPCRequestHandler):
 with SimpleXMLRPCServer(
 	('0.0.0.0', 8000),
 	RequestHandler,
-	logRequests=True,
+	logRequests=False,
 	allow_none=True
 ) as server:
 	server.register_introspection_functions()
