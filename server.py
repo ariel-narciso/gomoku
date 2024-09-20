@@ -1,8 +1,7 @@
 from xmlrpc.server import SimpleXMLRPCServer, SimpleXMLRPCRequestHandler
-from gomoku import Gomoku
-from connection import Connection
+from libs.connection import Connection
 
-connectionInstance = Connection(Gomoku(5, 3))
+connectionInstance = Connection()
 
 class RequestHandler(SimpleXMLRPCRequestHandler):
 	rpc_paths = ('/RPC2',)

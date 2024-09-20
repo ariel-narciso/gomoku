@@ -1,4 +1,4 @@
-from gomoku import Gomoku, PLAYER_ONE, PLAYER_TWO
+from libs.gomoku import Gomoku, PLAYER_ONE, PLAYER_TWO
 
 CHAR_PLAYERS = [PLAYER_ONE, PLAYER_TWO]
 
@@ -8,8 +8,8 @@ class Connection:
   __clientWinner: (int | None) = None
   __game: Gomoku = None
 
-  def __init__(self, game: Gomoku):
-    self.__game = game
+  def __init__(self, mapSize = 5, sequenceSize = 3):
+    self.__game = Gomoku(mapSize, sequenceSize)
 
   def initConnection(self):
     self.__qtdClients += 1
